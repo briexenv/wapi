@@ -87,7 +87,7 @@ def ytmp3():
 			"result": "url invalid"
 		}
 
-@app.route('/api/play', methods=['GET', 'POST'])
+@app.route('/api/search', methods=['GET', 'POST'])
 def ytsearch():
 	query = request.args.get('q')
 	if (len(query)):
@@ -98,6 +98,7 @@ def ytsearch():
 				jsonify({
 					"status": 200,
 					"result": {
+					    "url": "https://youtube.com/watch?v=" + ys.video_id,
 						"title": ys.title,
 						"thumbnail": ys.thumbnail_url,
 						"desc": ys.description,

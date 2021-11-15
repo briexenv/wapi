@@ -98,7 +98,7 @@ def ytsearch():
 				jsonify({
 					"status": 200,
 					"result": {
-					    "url": "https://youtube.com/watch?v=" + ys.video_id,
+					    "url": "https://youtu.be/" + ys.video_id,
 						"title": ys.title,
 						"thumbnail": ys.thumbnail_url,
 						"desc": ys.description,

@@ -65,7 +65,7 @@ def ytmp3():
 						"title": yt.title,
 						"thumbnail": yt.thumbnail_url,
 						"desc": yt.description,
-						"raw_duration": yt.length
+						"raw_duration": yt.length,
 						"duration": format_timespan(yt.length),
 						"raw_size": audio.filesize,
 						"size":format_size(audio.filesize),
@@ -101,9 +101,9 @@ def ytsearch():
 						"title": ys.title,
 						"thumbnail": ys.thumbnail_url,
 						"desc": ys.description,
-						"raw_duration": ys.length
+						"raw_duration": ys.length,
 						"duration": format_timespan(ys.length),
-						"raw_size": audio.filesize
+						"raw_size": audio.filesize,
 						"size":format_size(audio.filesize),
 						"download_url": audio.url
 					}

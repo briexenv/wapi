@@ -94,6 +94,8 @@ def ytsearch():
 		try:
 			ys = Search(query).results[0]
 			audio = ys.streams.get_audio_only()
+			video = ys.streams.filter(res='360p', progressive=True).first()
+
 			response = make_response(
 				jsonify({
 					"status": 200,
@@ -104,9 +106,12 @@ def ytsearch():
 						"desc": ys.description,
 						"raw_duration": ys.length,
 						"duration": format_timespan(ys.length),
-						"raw_size": audio.filesize,
-						"size":format_size(audio.filesize),
-						"download_url": audio.url
+						"video_raw_size": video.filesize,
+						"video_size":format_size(video.filesize),
+						"video_url": video.url,
+						"audio_raw_size": audio.filesize,
+						"audio_size":format_size(audio.filesize),
+						"audio_url": audio.url
 					}
 				})
 			)
